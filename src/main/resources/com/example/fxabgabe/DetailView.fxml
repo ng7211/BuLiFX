@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0"
+            prefWidth="950.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.fxabgabe.MVC.DetailsController">
+   <Label fx:id="labClub" layoutX="294.0" layoutY="88.0" prefHeight="27.0" prefWidth="76.0"/>
+   <Label fx:id="labSquadValue" layoutX="294.0" layoutY="114.0" prefHeight="27.0" prefWidth="76.0"/>
+   <ComboBox fx:id="teamChoice" layoutX="90.0" layoutY="207.0" prefHeight="28.0" prefWidth="167.0" promptText="Teams"/>
+   <TextField fx:id="tfWins" layoutX="391.0" layoutY="141.0"/>
+   <TextField fx:id="tfSquadValue" layoutX="391.0" layoutY="114.0"/>
+   <TextField fx:id="tfLosses" layoutX="391.0" layoutY="168.0"/>
+   <TextField fx:id="tfGoalsScored" layoutX="391.0" layoutY="223.0"/>
+   <TextField fx:id="tfDraws" layoutX="391.0" layoutY="195.0"/>
+   <TextField fx:id="tfSquadSize" layoutX="391.0" layoutY="277.0"/>
+   <TextField fx:id="tfGoalsConceded" layoutX="391.0" layoutY="249.0"/>
+   <TextField fx:id="tfPoints" layoutX="391.0" layoutY="303.0"/>
+   <Label fx:id="labWins" layoutX="294.0" layoutY="141.0" prefHeight="27.0" prefWidth="76.0"/>
+   <Label fx:id="labLosses" layoutX="294.0" layoutY="168.0" prefHeight="27.0" prefWidth="76.0"/>
+   <Label fx:id="labDraws" layoutX="294.0" layoutY="195.0" prefHeight="27.0" prefWidth="76.0"/>
+   <Label fx:id="labGoalsScored" layoutX="294.0" layoutY="223.0" prefHeight="27.0" prefWidth="76.0"/>
+   <Label fx:id="labGoalsConceded" layoutX="294.0" layoutY="250.0" prefHeight="27.0" prefWidth="95.0"/>
+   <Label fx:id="labSquadSize" layoutX="294.0" layoutY="277.0" prefHeight="27.0" prefWidth="76.0"/>
+   <TextField fx:id="tfClub" layoutX="391.0" layoutY="88.0"/>
+   <Label fx:id="labPoints" layoutX="294.0" layoutY="303.0" prefHeight="27.0" prefWidth="76.0"/>
+</AnchorPane>
