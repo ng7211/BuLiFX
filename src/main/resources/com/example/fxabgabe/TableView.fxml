@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+
+<TableView fx:id="table" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="773.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fxabgabe.MVC.TeamsTableController">
+  <columns>
+    <TableColumn fx:id="colRank" prefWidth="51.5" text="#" />
+    <TableColumn fx:id="colClub" prefWidth="175.0" text="Clubs" />
+      <TableColumn fx:id="colGamesPlayed" prefWidth="59.5" text="GP" />
+      <TableColumn fx:id="colWin" prefWidth="48.0" text="W" />
+      <TableColumn fx:id="colDraw" prefWidth="44.5" text="D" />
+      <TableColumn fx:id="colLosses" prefWidth="46.5" text="L" />
+      <TableColumn fx:id="colScored" prefWidth="51.0" text="G" />
+      <TableColumn fx:id="colConceded" prefWidth="58.5" text="C" />
+      <TableColumn fx:id="colGD" prefWidth="117.0" text="Goal Difference" />
+      <TableColumn fx:id="colPoints" prefWidth="64.0" text="Points" />
+  </columns>
+</TableView>
