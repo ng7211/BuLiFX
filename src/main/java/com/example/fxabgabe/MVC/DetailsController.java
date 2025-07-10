@@ -88,7 +88,7 @@ public class DetailsController {
                         tfSquadSize.setText(String.valueOf(newTeam.getKadergroesse()));
                         tfPoints.setText(String.valueOf(newTeam.getPunkte()));
                     } else {
-                        // Falls nichts ausgewählt, alle Felder leeren
+                        //clear all text fields
                         tfClub.clear();
                         tfSquadValue.clear();
                         tfGoalsScored.clear();
@@ -101,8 +101,4 @@ public class DetailsController {
                     }
                 });
     }
-
-
-
-
 }
