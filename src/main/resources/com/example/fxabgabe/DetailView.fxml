@@ -10,7 +10,7 @@
             fx:controller="com.example.fxabgabe.MVC.DetailsController">
    <Label fx:id="labClub" layoutX="294.0" layoutY="88.0" prefHeight="27.0" prefWidth="76.0"/>
    <Label fx:id="labSquadValue" layoutX="294.0" layoutY="114.0" prefHeight="27.0" prefWidth="76.0"/>
-   <ComboBox fx:id="teamChoice" layoutX="90.0" layoutY="207.0" prefHeight="28.0" prefWidth="167.0" promptText="Teams"/>
+   <ComboBox fx:id="teamChoice" layoutX="62.0" layoutY="207.0" prefHeight="28.0" prefWidth="195.0" promptText="Teams"/>
    <TextField fx:id="tfWins" layoutX="391.0" layoutY="141.0"/>
    <TextField fx:id="tfSquadValue" layoutX="391.0" layoutY="114.0"/>
    <TextField fx:id="tfLosses" layoutX="391.0" layoutY="168.0"/>

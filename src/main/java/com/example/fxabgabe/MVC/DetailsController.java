@@ -1,7 +1,7 @@
 package com.example.fxabgabe.MVC;
 
-import com.example.fxabgabe.BuLiModel;
-import com.example.fxabgabe.Team;
+import com.example.fxabgabe.Model.BuLiModel;
+import com.example.fxabgabe.Model.Team;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -52,6 +52,9 @@ public class DetailsController {
 
     @FXML
     protected void initialize() {
+        //fill dropdown with teams
+        teamChoice.setItems(model.getObservableList().sorted());
+
         //Set text of labels
         teamChoice
                 .getSelectionModel()
@@ -69,9 +72,6 @@ public class DetailsController {
                         labPoints.setText("Points:");
                         }
                     });
-
-        //fill dropdown with teams
-        teamChoice.setItems(model.getObservableList().sorted());
 
         //if dropdown clicked fill text fields with team statistics
         teamChoice.getSelectionModel()
