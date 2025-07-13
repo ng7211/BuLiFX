@@ -15,11 +15,10 @@ public class TeamsTableController {
     @FXML
     private TableColumn<Team, Number> colGamesPlayed, colWin, colDraw, colLosses, colGD, colPoints, colRank, colScored, colConceded;
 
-    private final BuLiModel buLiModel = new BuLiModel();
+    private BuLiModel buLiModel;
 
     @FXML
     protected void initialize() {
-        table.setItems(buLiModel.getSortedTeams());
 
         colRank.setCellValueFactory(cell ->
                 Bindings.createIntegerBinding(
@@ -40,5 +39,15 @@ public class TeamsTableController {
         colScored.setCellValueFactory(scored -> scored.getValue().toreProperty());
         colConceded.setCellValueFactory(conceded -> conceded.getValue().gegentoreProperty());
 
+    }
+
+    public void setViewModel(BuLiModel model) {
+        this.buLiModel = model;
+        // Liste als Items setzen (sortedTeams liefert dir bereits nach Punkten sortierte Liste)
+        table.setItems(model.getSortedTeams());
+        // bei Tabellenauswahl ins ViewModel zurückschreiben (optional)
+        table.getSelectionModel()
+                .selectedItemProperty()
+                .addListener((obs, oldT, newT) -> model.setSelectedTeam(newT));
     }
 }    
