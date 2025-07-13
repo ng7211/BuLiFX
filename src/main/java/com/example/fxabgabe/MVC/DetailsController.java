@@ -2,7 +2,6 @@ package com.example.fxabgabe.MVC;
 
 import com.example.fxabgabe.Model.BuLiModel;
 import com.example.fxabgabe.Model.Team;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
