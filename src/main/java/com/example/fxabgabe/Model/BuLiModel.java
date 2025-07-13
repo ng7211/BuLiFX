@@ -1,5 +1,7 @@
 package com.example.fxabgabe.Model;
 
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.ObservableList;
 
 import java.util.Comparator;
@@ -7,6 +9,7 @@ import java.util.Comparator;
 public class BuLiModel {
 
     private final ObservableList<Team> observableList = javafx.collections.FXCollections.observableArrayList();
+    private final ObjectProperty<Team> selectedTeam = new SimpleObjectProperty<>();
 
     public BuLiModel() {
         loadTeams();
@@ -41,4 +44,7 @@ public class BuLiModel {
     public ObservableList<Team> getSortedTeams() {
         return observableList.sorted(Comparator.comparing(Team::getPunkte).reversed());
     }
+
+    // setter für ChartController
+    public void setSelectedTeam(Team t) { selectedTeam.set(t); }
 }

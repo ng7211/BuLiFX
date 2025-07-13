@@ -52,9 +52,6 @@ public class Team {
     public int getUnents() { return unents.get(); }
     public int getNiederl() { return niederl.get(); }
     public int getKadergroesse() {return kadergroesse.get();}
-    public int getSpieleGespielt() {
-        return spieleGespielt.get();
-    }
 
     @Override
     public String toString() {
