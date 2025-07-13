@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.ScatterChart?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fxabgabe.MVC.ChartController">
+    <ComboBox fx:id="chartChoice" layoutX="224.0" layoutY="2.0" prefWidth="150.0" AnchorPane.topAnchor="2.0" />
+    <ScatterChart fx:id="scatterChart" layoutX="-1.0" layoutY="51.0" prefHeight="349.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="51.0">
+      <xAxis>
+          <NumberAxis fx:id="xAxis" />
+      </xAxis>
+      <yAxis>
+          <NumberAxis fx:id="yAxis" side="LEFT" />
+      </yAxis>
+    </ScatterChart>
+</AnchorPane>
