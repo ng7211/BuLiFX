@@ -104,7 +104,7 @@ public class DetailsController {
 
     public void setViewModel(BuLiModel vm) {
         this.model = vm;
-        // Dropdown neu befüllen und Listener bleibt erhalten
+        //fill dropdown
         teamChoice.setItems(vm.getObservableList());
     }
 }
