@@ -3,7 +3,11 @@ package com.example.fxabgabe.MVC;
 import com.example.fxabgabe.Model.BuLiModel;
 import com.example.fxabgabe.Model.Team;
 import javafx.beans.binding.Bindings;
+import javafx.collections.transformation.SortedList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
@@ -14,6 +18,9 @@ public class TeamsTableController {
     private TableColumn<Team, String> colClub;
     @FXML
     private TableColumn<Team, Number> colGamesPlayed, colWin, colDraw, colLosses, colGD, colPoints, colRank, colScored, colConceded;
+
+    @FXML
+    ContextMenu ctx = new ContextMenu();
 
     private BuLiModel buLiModel;
 
@@ -39,15 +46,26 @@ public class TeamsTableController {
         colScored.setCellValueFactory(scored -> scored.getValue().toreProperty());
         colConceded.setCellValueFactory(conceded -> conceded.getValue().gegentoreProperty());
 
+        MenuItem sortByPoints = new MenuItem("Sort by most points");
+        MenuItem sortByGoals   = new MenuItem("Sort by least goals");
+
+        sortByPoints.setOnAction(_ -> {
+            table.getSortOrder().setAll(colPoints);
+            table.sort();
+        });
+        sortByGoals.setOnAction(_ -> {
+            table.getSortOrder().setAll(colScored);
+            table.sort();
+        });
+
+        ctx.getItems().addAll(sortByPoints, sortByGoals);
+
+        table.setContextMenu(ctx);
     }
 
     public void setViewModel(BuLiModel model) {
-        this.buLiModel = model;
-        // Liste als Items setzen (sortedTeams liefert dir bereits nach Punkten sortierte Liste)
-        table.setItems(model.getSortedTeams());
-        // bei Tabellenauswahl ins ViewModel zurückschreiben (optional)
-        table.getSelectionModel()
-                .selectedItemProperty()
-                .addListener((obs, oldT, newT) -> model.setSelectedTeam(newT));
+        SortedList<Team> sorted = model.getSortedTeams();
+        sorted.comparatorProperty().bind(table.comparatorProperty());
+        table.setItems(sorted);
     }
 }    
