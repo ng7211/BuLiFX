@@ -4,7 +4,6 @@ import com.example.fxabgabe.Model.BuLiModel;
 import com.example.fxabgabe.Model.Team;
 import javafx.beans.binding.Bindings;
 import javafx.collections.transformation.SortedList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
@@ -36,6 +35,7 @@ public class TeamsTableController {
                 )
         );
 
+
         colClub.setCellValueFactory(club -> club.getValue().nameProperty());
         colGamesPlayed.setCellValueFactory(gp -> gp.getValue().spieleGespieltProperty());
         colPoints.setCellValueFactory(points -> points.getValue().punkteProperty());
@@ -46,7 +46,7 @@ public class TeamsTableController {
         colScored.setCellValueFactory(scored -> scored.getValue().toreProperty());
         colConceded.setCellValueFactory(conceded -> conceded.getValue().gegentoreProperty());
 
-        MenuItem sortByPoints = new MenuItem("Sort by most points");
+        MenuItem sortByPoints = new MenuItem("Sort by least points");
         MenuItem sortByGoals   = new MenuItem("Sort by least goals");
 
         sortByPoints.setOnAction(_ -> {
@@ -59,13 +59,16 @@ public class TeamsTableController {
         });
 
         ctx.getItems().addAll(sortByPoints, sortByGoals);
-
         table.setContextMenu(ctx);
     }
 
     public void setViewModel(BuLiModel model) {
-        SortedList<Team> sorted = model.getSortedTeams();
+        this.buLiModel = model;
+        SortedList<Team> sorted = buLiModel.getSortedTeams();
         sorted.comparatorProperty().bind(table.comparatorProperty());
         table.setItems(sorted);
+        table.getSelectionModel()
+                .selectedItemProperty()
+                .addListener((_, _, newT) -> model.setSelectedTeam(newT));
     }
 }    

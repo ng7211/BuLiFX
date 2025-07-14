@@ -5,6 +5,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.SortedList;
 
+
 public class BuLiModel {
 
     private final ObservableList<Team> observableList = javafx.collections.FXCollections.observableArrayList();
@@ -48,4 +49,12 @@ public class BuLiModel {
 
     //setter for ChartController
     public void setSelectedTeam(Team t) { selectedTeam.set(t); }
+
+    public ObjectProperty<Team> selectedTeamProperty() {
+        return selectedTeam;
+    }
+
+    public Team getSelectedTeamProperty() {
+        return selectedTeam.get();
+    }
 }
